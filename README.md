@@ -11,4 +11,4 @@ This app will:
 
 ## Review
 
-App can be viewed at: https://smeyer012.github.io/simple-js-app/index.html
+App can be viewed at: https://smeyer012.github.io/todo-list-app/index.html
