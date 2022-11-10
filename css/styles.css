@@ -13,6 +13,18 @@ margin-top: 40px;
 background: white;
 border-radius: 5px;}
 
+#inputBox.error {
+    border: 1px solid red;
+    background: rgba(204, 23, 10, 0.2);
+    padding: 10px;
+}
+
+#inputBox.error label {
+    padding-top: 5px;
+    display: inline-block;
+    font-style: italic;
+}
+
 form {
 display: inline-block;
 }
@@ -41,7 +53,31 @@ ol li {padding: 5px;color:#000;}
 
 ol li:nth-child(even){background: #dfdfdf;}
 
-.strike{text-decoration: line-through;}
+.strike{
+    text-decoration: line-through;
+    color: #8f8f8f;
+}
+
+#list li {
+    position: relative;
+    transition: all 0.5s linear;
+}
+
+.deleteItem {
+    padding: 0 4px 1px;
+    border: 1px solid #b3b3b3;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    line-height: 1.2;
+    color: #595959;
+    transition: all 0.5s linear;
+}
+
+.deleteItem:hover {
+    background-color: #fc999b;
+    color: #fff;
+}
 
 li:hover{
   cursor: pointer;
