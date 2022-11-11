@@ -22,11 +22,13 @@ $('#list').on("click", "li", function(e){
     let target = $(e.target);
     if(!$(target).is("span")) {
         $(this).toggleClass("strike");
-    } 
+    }
     else {
         target.parent().css("opacity", 0);
-        setTimeout(function() { 
+        setTimeout(function() {
             target.parent().remove();
         }, 600);
     }
 });
+
+$('#list').sortable();
