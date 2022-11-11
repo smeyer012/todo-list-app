@@ -1,3 +1,5 @@
+let theList = $('#list');
+
 $("#button").click(function() {
 
     let inputValue = $('#input').val();
@@ -18,7 +20,7 @@ $("#button").click(function() {
 });
 
 
-$('#list').on("click", "li", function(e){
+theList.on("click", "li", function(e){
     let target = $(e.target);
     if(!$(target).is("span")) {
         $(this).toggleClass("strike");
@@ -29,6 +31,4 @@ $('#list').on("click", "li", function(e){
             target.parent().remove();
         }, 600);
     }
-});
-
-$('#list').sortable();
+}).sortable();
