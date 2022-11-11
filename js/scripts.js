@@ -1,29 +1,32 @@
-function newItem(){
+$("#button").click(function() {
 
-        let inputValue = $('#input').val();
+    let inputValue = $('#input').val();
+    let inputBox = $('#inputBox');
 
-        if (inputValue === '') {
-            $('#inputBox').addClass('error');
-            $('#inputBox').append('<label for="input">Type to-do item into the box above</label>');
-        } else {
-            $('#inputBox').removeClass('error');
-            $('#inputBox label').remove();
-            $('#list').append('<li>' + inputValue + '<span class="deleteItem">x</span></li>');
-            $('#input').val('');
+    if (inputValue === '') {
+        if (!inputBox.hasClass('error')) {
+            inputBox.append('<label for="input">Type to-do item into the box above</label>');
         }
-       
-        $('#list li').on("click", function() {
-            $(this).toggleClass("strike");
-        });
-       
-        $('.deleteItem').on("click", function() {
-            let $this = $(this);
-            $this.parent().css("opacity", 0);
-            setTimeout(function() { 
-                $this.parent().remove();
-            }, 600);
-        });
-     
-        //enables reordering 
-        $('#list').sortable();
-}
+        inputBox.addClass('error');
+    } else {
+        inputBox.removeClass('error');
+        $('#inputBox label').remove();
+        $('#list').append('<li>' + inputValue + '<span class="deleteItem">x</span></li>');
+        $('#input').val('');
+    }
+
+});
+
+
+$('#list').on("click", "li", function(e){
+    let target = $(e.target);
+    if(!$(target).is("span")) {
+        $(this).toggleClass("strike");
+    } 
+    else {
+        target.parent().css("opacity", 0);
+        setTimeout(function() { 
+            target.parent().remove();
+        }, 600);
+    }
+});
