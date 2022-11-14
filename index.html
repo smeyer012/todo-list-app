@@ -9,7 +9,7 @@
 	<link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body class="bg-light">
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand mb-0 h1" href="#">Intro to JS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,18 +33,18 @@
         </ul>
     </div>
   </nav>
-	<div class="container">
-		<h2>To Do List App</h2>
-		<p><em> Double click to mark an item off, click on "X" to delete an item, and drag items to reorder.</em></p>
-       
-		<div id="inputBox">
-            <form name="toDoList" id="itemInput">
-                <input type="text" name="ListItem" id="input"/>
+	<div class="container shadow border p-4">
+		<h1 class="text-info h2 text-center mb-4">To Do List App</h1>
+		<p><em> Click to mark an item off, click on "X" to delete an item, and drag items to reorder.</em></p>
+		<div id="inputBox" class="d-flex">
+            <form name="toDoList" id="itemInput" class="flex-fill">
+                <!-- <input type="text" name="ListItem" id="input"/> -->
+                <label class="sr-only" for="input">Add To Do Item</label>
+                <input type="text" class="form-control" id="input">
             </form>
-            <div id="button">Add</div>
+            <button id="button" class="btn btn-info ml-4 flex-fill">Add</button>
             <!-- <div onclick="newItem()" id="button">Add</div> -->
         </div>
-		<br/>
 		<ol id="list"></ol>
     </div>
   <script

@@ -9,10 +9,11 @@ $("#button").click(function() {
     if (inputValue === '') {
         // creates error message if input is empty
         if (!inputBox.hasClass('error')) {
-            inputBox.append('<label for="input">Type to-do item into the box above</label>');
+            inputBox.append('<label class="error" for="input">Type to-do item into the box above</label>');
         }
         inputBox.addClass('error');
     } else {
+        console.log('here');
         // removes any error messages if input has content
         inputBox.removeClass('error');
         $('#inputBox label').remove();
@@ -20,6 +21,7 @@ $("#button").click(function() {
         $('#list').append('<li>' + inputValue + '<span class="deleteItem">x</span></li>');
         // resets input for easy addition of new item
         $('#input').val('');
+        $('#list').addClass('hasItems');
     }
 
 });
